@@ -4,6 +4,7 @@ apply plugin: 'maven'
 def groupId = project.PUBLISH_GROUP_ID
 def artifactId = project.PUBLISH_ARTIFACT_ID
 def version = project.PUBLISH_VERSION
+def url = project.PUBLISH_URL
 
 def localReleaseDest = "${buildDir}/release/${version}"
 
@@ -29,7 +30,7 @@ uploadArchives {
         pom.artifactId = artifactId
         pom.version = version
         // Add other pom properties here if you want (developer details / licenses)
-        repository(url: "file://${localReleaseDest}")
+        repository(url: url)
     }
 }
 
